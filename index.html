@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АНО «Центр поддержки экспорта Калужской области»</title>
+    
+    <!-- Подключение шрифтов Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== ОСНОВНЫЕ СТИЛИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f4f8;
+            padding: 40px 20px;
+            font-family: 'Inter', sans-serif; /* ОСНОВНОЙ ШРИФТ (как на сайте компании) */
+        }
+
+        /* ===== КОНТЕЙНЕРЫ ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            padding: 40px 45px;
+            margin-bottom: 40px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ===== ЗАГОЛОВОК ===== */
+        .main-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .main-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a2b4a;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .main-header .subtitle {
+            color: #5a6e8a;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a73e8, #4a9eff);
+            border-radius: 4px;
+            margin: 16px auto 0;
+        }
+
+        /* ===== БЛОК ИНФОРМАЦИИ ОБ ОРГАНИЗАЦИИ ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        .info-item {
+            background: #f7faff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border-left: 4px solid #1a73e8;
+            transition: background 0.2s ease;
+        }
+
+        .info-item:hover {
+            background: #f0f6ff;
+        }
+
+        .info-item .label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #6a7f9f;
+            margin-bottom: 4px;
+        }
+
+        .info-item .value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b1a33;
+            line-height: 1.4;
+        }
+
+        .info-item .value.small {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        /* ===== БЛОК ШРИФТОВ ===== */
+        .fonts-section {
+            margin-top: 10px;
+        }
+
+        .fonts-section h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a2b4a;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fonts-section h2 span {
+            font-size: 26px;
+        }
+
+        .font-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .font-card {
+            background: #fafcff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid #e6edf5;
+            transition: all 0.25s ease;
+        }
+
+        .font-card:hover {
+            border-color: #1a73e8;
+            background: #f5faff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.08);
+        }
+
+        .font-card .font-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #4a5f7f;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
+        }
+
+        .font-card .font-sample {
+            font-size: 22px;
+            color: #0b1a33;
+            line-height: 1.5;
+        }
+
+        .font-card .font-sample .highlight {
+            color: #1a73e8;
+            font-weight: 600;
+        }
+
+        .font-card .font-description {
+            font-size: 13px;
+            color: #6a7f9f;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        /* ===== СТИЛИ ДЛЯ КАЖДОГО ШРИФТА ===== */
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-opensans { font-family: 'Open Sans', sans-serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-nunito { font-family: 'Nunito', sans-serif; }
+
+        /* ===== ФУТЕР ===== */
+        .footer {
+            text-align: center;
+            color: #7a8fa8;
+            font-size: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #e6edf5;
+            margin-top: 10px;
+        }
+
+        .footer a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 600px) {
+            .card {
+                padding: 24px 18px;
+            }
+
+            .main-header h1 {
+                font-size: 24px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .font-demo {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item .value {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ======================================== -->
+        <!-- КАРТОЧКА 1: ЗАГОЛОВОК И ИНФОРМАЦИЯ        -->
+        <!-- ======================================== -->
+        <div class="card">
+
+            <!-- ЗАГОЛОВОК СТРАНИЦЫ -->
+            <div class="main-header">
+                <h1>АНО «Центр поддержки экспорта Калужской области»</h1>
+                <p class="subtitle">Региональный институт поддержки субъектов МСП</p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- ИНФОРМАЦИЯ ОБ ОРГАНИЗАЦИИ -->
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <div class="label">Полное наименование</div>
+                    <div class="value small">Автономная некоммерческая организация «Центр поддержки экспорта Калужской области»</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Сокращённое наименование</div>
+                    <div class="value">АНО «Центр поддержки экспорта Калужской области»</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Организационно-правовая форма</div>
+                    <div class="value">Автономная некоммерческая организация (АНО)</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Адрес</div>
+                    <div class="value small">248000, Калужская область, г. Калуга, ул. Театральная, зд. 38А</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Основные виды деятельности</div>
+                    <div class="value small">
+                        • Организация участия в выставках и ярмарках<br>
+                        • Проведение бизнес-миссий (в т.ч. реверсных)<br>
+                        • Консультационная и информационная поддержка ВЭД<br>
+                        • Обучение экспортёров (Школа экспорта РЭЦ)
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Учредитель</div>
+                    <div class="value small">Министерство экономического развития и промышленности Калужской области</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Целевая аудитория</div>
+                    <div class="value small">Субъекты малого и среднего предпринимательства (СМСП) Калужской области</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="label">Ключевой партнёр</div>
+                    <div class="value small">АО «Российский экспортный центр» (РЭЦ)</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ======================================== -->
+        <!-- КАРТОЧКА 2: ДЕМОНСТРАЦИЯ ШРИФТОВ         -->
+        <!-- ======================================== -->
+        <div class="card fonts-section">
+
+            <h2>
+                <span>🔤</span> Варианты шрифтов
+                <span style="font-size:14px;font-weight:400;color:#6a7f9f;margin-left:auto;">
+                    (основной + 5 альтернативных)
+                </span>
+            </h2>
+
+            <div class="font-demo">
+
+                <!-- 1. ОСНОВНОЙ ШРИФТ (Inter) — как на официальном сайте -->
+                <div class="font-card">
+                    <div class="font-name">⭐ ОСНОВНОЙ ШРИФТ</div>
+                    <div class="font-sample font-inter">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Inter — современный, чистый, используется на сайте компании</div>
+                </div>
+
+                <!-- 2. Roboto -->
+                <div class="font-card">
+                    <div class="font-name">ВАРИАНТ 1</div>
+                    <div class="font-sample font-roboto">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Roboto — нейтральный, универсальный, отличная читаемость</div>
+                </div>
+
+                <!-- 3. Montserrat -->
+                <div class="font-card">
+                    <div class="font-name">ВАРИАНТ 2</div>
+                    <div class="font-sample font-montserrat">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Montserrat — геометричный, строгий, деловой стиль</div>
+                </div>
+
+                <!-- 4. Open Sans -->
+                <div class="font-card">
+                    <div class="font-name">ВАРИАНТ 3</div>
+                    <div class="font-sample font-opensans">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Open Sans — один из самых популярных, максимальная читаемость</div>
+                </div>
+
+                <!-- 5. Playfair Display -->
+                <div class="font-card">
+                    <div class="font-name">ВАРИАНТ 4</div>
+                    <div class="font-sample font-playfair">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Playfair Display — элегантный, с засечками, для статусного вида</div>
+                </div>
+
+                <!-- 6. Nunito -->
+                <div class="font-card">
+                    <div class="font-name">ВАРИАНТ 5</div>
+                    <div class="font-sample font-nunito">
+                        <span class="highlight">АНО</span> «Центр поддержки экспорта»
+                    </div>
+                    <div class="font-description">Nunito — мягкий, округлый, дружелюбный и современный</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ======================================== -->
+        <!-- ФУТЕР                                      -->
+        <!-- ======================================== -->
+        <div class="footer">
+            <p>
+                Страница сгенерирована в рамках практической подготовки в 
+                <strong>АНО «Центр поддержки экспорта Калужской области»</strong>
+            </p>
+            <p style="margin-top:4px;font-size:13px;color:#a0b4cc;">
+                © 2026 • Все права защищены
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
