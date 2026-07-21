@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АНО «Центр поддержки экспорта Калужской области»</title>
     
-    <!-- Подключение шрифтов Google Fonts -->
+    <!-- ПОДКЛЮЧЕНИЕ ШРИФТОВ (правильный синтаксис) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== ОСНОВНЫЕ СТИЛИ ===== */
+        /* ===== СБРОС СТИЛЕЙ ===== */
         * {
             margin: 0;
             padding: 0;
@@ -24,15 +24,16 @@
         body {
             background: #f0f4f8;
             padding: 40px 20px;
-            font-family: 'Inter', sans-serif; /* ОСНОВНОЙ ШРИФТ (как на сайте компании) */
+            font-family: 'Inter', sans-serif;
         }
 
-        /* ===== КОНТЕЙНЕРЫ ===== */
+        /* ===== КОНТЕЙНЕР ===== */
         .container {
             max-width: 1100px;
             margin: 0 auto;
         }
 
+        /* ===== КАРТОЧКИ ===== */
         .card {
             background: #ffffff;
             border-radius: 16px;
@@ -46,7 +47,7 @@
             box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
         }
 
-        /* ===== ЗАГОЛОВОК ===== */
+        /* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
         .main-header {
             text-align: center;
             margin-bottom: 15px;
@@ -76,7 +77,7 @@
             margin: 16px auto 0;
         }
 
-        /* ===== БЛОК ИНФОРМАЦИИ ОБ ОРГАНИЗАЦИИ ===== */
+        /* ===== СЕТКА С ИНФОРМАЦИЕЙ ===== */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -118,10 +119,6 @@
         }
 
         /* ===== БЛОК ШРИФТОВ ===== */
-        .fonts-section {
-            margin-top: 10px;
-        }
-
         .fonts-section h2 {
             font-size: 22px;
             font-weight: 600;
@@ -138,7 +135,7 @@
 
         .font-demo {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -184,7 +181,7 @@
             font-style: italic;
         }
 
-        /* ===== СТИЛИ ДЛЯ КАЖДОГО ШРИФТА ===== */
+        /* ===== КЛАССЫ ДЛЯ ШРИФТОВ ===== */
         .font-inter { font-family: 'Inter', sans-serif; }
         .font-roboto { font-family: 'Roboto', sans-serif; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
@@ -211,7 +208,7 @@
             text-decoration: underline;
         }
 
-        /* ===== АДАПТИВНОСТЬ ===== */
+        /* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН ===== */
         @media (max-width: 600px) {
             .card {
                 padding: 24px 18px;
@@ -243,14 +240,12 @@
         <!-- ======================================== -->
         <div class="card">
 
-            <!-- ЗАГОЛОВОК СТРАНИЦЫ -->
             <div class="main-header">
                 <h1>АНО «Центр поддержки экспорта Калужской области»</h1>
                 <p class="subtitle">Региональный институт поддержки субъектов МСП</p>
                 <div class="divider"></div>
             </div>
 
-            <!-- ИНФОРМАЦИЯ ОБ ОРГАНИЗАЦИИ -->
             <div class="info-grid">
 
                 <div class="info-item">
@@ -316,7 +311,6 @@
 
             <div class="font-demo">
 
-                <!-- 1. ОСНОВНОЙ ШРИФТ (Inter) — как на официальном сайте -->
                 <div class="font-card">
                     <div class="font-name">⭐ ОСНОВНОЙ ШРИФТ</div>
                     <div class="font-sample font-inter">
@@ -325,7 +319,6 @@
                     <div class="font-description">Inter — современный, чистый, используется на сайте компании</div>
                 </div>
 
-                <!-- 2. Roboto -->
                 <div class="font-card">
                     <div class="font-name">ВАРИАНТ 1</div>
                     <div class="font-sample font-roboto">
@@ -334,7 +327,6 @@
                     <div class="font-description">Roboto — нейтральный, универсальный, отличная читаемость</div>
                 </div>
 
-                <!-- 3. Montserrat -->
                 <div class="font-card">
                     <div class="font-name">ВАРИАНТ 2</div>
                     <div class="font-sample font-montserrat">
@@ -343,7 +335,6 @@
                     <div class="font-description">Montserrat — геометричный, строгий, деловой стиль</div>
                 </div>
 
-                <!-- 4. Open Sans -->
                 <div class="font-card">
                     <div class="font-name">ВАРИАНТ 3</div>
                     <div class="font-sample font-opensans">
@@ -352,7 +343,6 @@
                     <div class="font-description">Open Sans — один из самых популярных, максимальная читаемость</div>
                 </div>
 
-                <!-- 5. Playfair Display -->
                 <div class="font-card">
                     <div class="font-name">ВАРИАНТ 4</div>
                     <div class="font-sample font-playfair">
@@ -361,7 +351,6 @@
                     <div class="font-description">Playfair Display — элегантный, с засечками, для статусного вида</div>
                 </div>
 
-                <!-- 6. Nunito -->
                 <div class="font-card">
                     <div class="font-name">ВАРИАНТ 5</div>
                     <div class="font-sample font-nunito">
